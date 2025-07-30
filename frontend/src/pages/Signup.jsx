@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import InputForm from '../components/InputForm';
-import { saveAuth } from '../utils/authUtils';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -17,10 +17,16 @@ const Signup = () => {
       const res = await axios.post('http://localhost:5000/api/auth/signup', {
         name, email, password, role
       });
-      saveAuth(res.data.token, res.data.role);
+      toast.success('Signup successful!');
       navigate('/login');
     } catch (err) {
-      alert(err.response?.data?.message || 'Signup failed');
+      const errors = err.response?.data?.errors;
+      if (errors && Array.isArray(errors)) {
+        errors.forEach((error) => toast.error(error.msg));
+      } else {
+        toast.error(err.response?.data?.message || 'Signup failed');
+      }
+      console.log(err.response?.data?.errors);
     }
   };
 
