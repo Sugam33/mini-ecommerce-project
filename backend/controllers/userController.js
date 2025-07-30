@@ -1,6 +1,6 @@
 export const getUserProfile = (req, res) => {
   try {
-    const { name, email, role, _id } = req.user;  // Decoded from JWT in verifyToken
+    const { name, email, role, _id } = req.user; 
     res.status(200).json({
       name,
       email,

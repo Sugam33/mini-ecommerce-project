@@ -24,7 +24,7 @@ const Layout = () => {
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div className="container">
-          <Link className="navbar-brand fw-bold" to="/">MiniStore</Link>
+          <Link className="navbar-brand fw-bold" to="/">Sugam Ko Pasal</Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -42,7 +42,7 @@ const Layout = () => {
 
               {isLoggedIn && (
                 <li className="nav-item">
-                  <Link className="nav-link" to={dashboardRoute}>Dashboard</Link>
+                  <Link className="nav-link" to={dashboardRoute}>Profile</Link>
                 </li>
               )}
 
@@ -94,7 +94,7 @@ const Layout = () => {
 
       {/* Footer */}
       <footer className="bg-dark text-white text-center py-4 mt-auto">
-        <p className="mb-0">© {new Date().getFullYear()} MiniStore. All rights reserved.</p>
+        <p className="mb-0">© {new Date().getFullYear()}All rights reserved.</p>
         <p className="mb-0">Created By Sugam</p>
       </footer>
     </div>
