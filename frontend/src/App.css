@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Wrap banner outside container to avoid padding */
+.banner-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Banner styles */
+.hero-banner {
+    width: 2000px;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -310px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.category-card {
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+/* Add Product Modal Css  */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.modal-title {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 4px rgba(74,144,226,0.3);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.btn-save-product {
+  background-color: #4a90e2;
+  color: white;
+  padding: 8px 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-save-product:hover {
+  background-color: #4178c0;
+}
+
+.btn-cancel-product {
+  background-color: #ccc;
+  color: #333;
+  padding: 8px 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-cancel-product:hover {
+  background-color: #b3b3b3;
+}
+
+
+/* Signup Css  */
+.signup-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.signup-page .card {
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.signup-page h2 {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+
+/* Login Css  */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+}
+
+.login-page .card {
+  border-radius: 12px;
+  background-color: #fff;
+   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-page h2 {
+  font-weight: 600;
+  color: #d81b60;
+}
+
+/* User Dashboard Css  */
+.dashboard-container {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #2c3e50;
+}
+
+.dashboard-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.5rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.info-list {
+  line-height: 1.7rem;
+  font-size: 1rem;
+}
+
+.logout-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #2980b9;
+}
+
+.loading-text {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.2rem;
+}
+
