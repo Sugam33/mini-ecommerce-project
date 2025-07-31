@@ -13,7 +13,7 @@ dotenv.config();
 
 const app = express();
 
-// ⛓ Required for ES module __dirname
+// Required for ES module __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -21,7 +21,7 @@ const __dirname = path.dirname(__filename);
 app.use(cors());
 app.use(express.json());
 
-// 🔓 Serve static files from /uploads
+// Serve static files from /uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
