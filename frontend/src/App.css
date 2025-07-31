@@ -150,13 +150,37 @@ body {
 /* Signup Css  */
 .signup-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/signup.jpg');  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+  left: -120px;
+}
+
+.signup-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(2px); 
+  z-index: 0;
 }
 
 .signup-page .card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.92);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem;
 }
 
 .signup-page h2 {
@@ -164,23 +188,47 @@ body {
   color: #1976d2;
 }
 
-
 /* Login Css  */
 .login-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/login.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+  left: -120px;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px); 
+  z-index: 0;
 }
 
 .login-page .card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 2rem;
   border-radius: 12px;
-  background-color: #fff;
-   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
 
 .login-page h2 {
   font-weight: 600;
   color: #d81b60;
 }
+
 
 /* User Dashboard Css  */
 .dashboard-container {
