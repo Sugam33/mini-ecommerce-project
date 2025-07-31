@@ -31,8 +31,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="container signup-page d-flex align-items-center justify-content-center">
-      <div className="card shadow-lg p-4 col-md-6">
+    <div className="signup-page d-flex align-items-center justify-content-center">
+      <div className="card shadow-lg">
         <h2 className="text-center mb-4">Create Account</h2>
         <form onSubmit={handleSubmit}>
           <InputForm label="Name" type="text" value={name} onChange={setName} />

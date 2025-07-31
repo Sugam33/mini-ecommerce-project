@@ -28,8 +28,8 @@ const Login = () => {
   };
 
   return (
-    <div className="container login-page d-flex align-items-center justify-content-center">
-      <div className="card shadow-lg p-4 col-md-6">
+    <div className="login-page d-flex align-items-center justify-content-center">
+      <div className="card shadow-lg">
         <h2 className="text-center mb-4">Welcome Back</h2>
         <form onSubmit={handleSubmit}>
           <InputForm label="Email" type="email" value={email} onChange={setEmail} />
