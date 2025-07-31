@@ -10,7 +10,7 @@ const ProductList = ({ productList, onProductEdited, onProductDeleted }) => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const res = await fetch(`https://mini-ecommerce-project-backend.onrender.com/api/products/${id}`, {
         method: "DELETE",
         headers: {
           "auth-token": localStorage.getItem("token"),

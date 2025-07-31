@@ -15,7 +15,7 @@ const CategoryPage = () => {
     const fetchCategoryProducts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/products/category/${name}`
+          `https://mini-ecommerce-project-backend.onrender.com/api/products/category/${name}`
         );
         setFiltered(res.data);
       } catch (err) {
@@ -34,7 +34,7 @@ const CategoryPage = () => {
   // Admin-only delete
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      const res = await axios.delete(`https://mini-ecommerce-project-backend.onrender.com/api/products/${id}`, {
         headers: {
           "auth-token": localStorage.getItem("token")
         }

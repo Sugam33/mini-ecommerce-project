@@ -19,7 +19,7 @@ const Cart = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/cart/${userId}/${productId}`,
+        `https://mini-ecommerce-project-backend.onrender.com/api/cart/${userId}/${productId}`,
         { quantity: newQuantity },
         { headers: { "auth-token": token } }
       );
@@ -28,7 +28,7 @@ const Cart = () => {
             id: i.productId._id,
             name: i.productId.name,
             image: i.productId.image
-              ? `http://localhost:5000/uploads/${i.productId.image}`
+              ? `https://mini-ecommerce-project-backend.onrender.com/uploads/${i.productId.image}`
               : "/images/default.jpg",
             price: typeof i.productId.price === "number" ? i.productId.price : 0,
             quantity: i.quantity,
@@ -43,7 +43,7 @@ const Cart = () => {
   const removeItem = async (productId) => {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/cart/${userId}/${productId}`,
+        `https://mini-ecommerce-project-backend.onrender.com/api/cart/${userId}/${productId}`,
         { headers: { "auth-token": token } }
       );
       const parsed = Array.isArray(res.data.items)
@@ -51,7 +51,7 @@ const Cart = () => {
             id: i.productId._id,
             name: i.productId.name,
             image: i.productId.image
-              ? `http://localhost:5000/uploads/${i.productId.image}`
+              ? `https://mini-ecommerce-project-backend.onrender.com/uploads/${i.productId.image}`
               : "/images/default.jpg",
             price: typeof i.productId.price === "number" ? i.productId.price : 0,
             quantity: i.quantity,

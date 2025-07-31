@@ -11,7 +11,7 @@ const ProductDetail = () => {
     const fetchProduct = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/products/${id}`
+          `https://mini-ecommerce-project-backend.onrender.com/api/products/${id}`
         );
         setProduct(data);
       } catch (err) {
@@ -43,7 +43,7 @@ const ProductDetail = () => {
         {/* Product Image */}
         <div className="w-100 bg-light text-center p-3">
           <img
-            src={`http://localhost:5000/uploads/${product.image}`}
+            src={`https://mini-ecommerce-project-backend.onrender.com/uploads/${product.image}`}
             alt={product.name}
             className="img-fluid"
             style={{

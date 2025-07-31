@@ -33,7 +33,7 @@ const AddProductModal = ({ onClose, onProductAdded }) => {
     formData.append('image', selectedFile);
 
     try {
-      const res = await fetch('http://localhost:5000/api/products/upload-image', {
+      const res = await fetch('https://mini-ecommerce-project-backend.onrender.com/api/products/upload-image', {
         method: 'POST',
         headers: {
           'auth-token': localStorage.getItem('token'),
@@ -62,7 +62,7 @@ const AddProductModal = ({ onClose, onProductAdded }) => {
     const payload = { ...newProduct, image: filename };
 
     try {
-      const res = await fetch('http://localhost:5000/api/products', {
+      const res = await fetch('https://mini-ecommerce-project-backend.onrender.com/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

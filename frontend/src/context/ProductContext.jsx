@@ -9,7 +9,7 @@ export const ProductProvider = ({ children }) => {
   const [loadingError, setLoadingError] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://mini-ecommerce-project-backend.onrender.com/api/products')
       .then((res) => {
         setProducts(res.data);
         setLoading(false);

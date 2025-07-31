@@ -8,7 +8,7 @@ export const CartProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
   const formatImage = (img) =>
-    img ? `http://localhost:5000/uploads/${img}` : "/images/default.jpg";
+    img ? `https://mini-ecommerce-project-backend.onrender.com/uploads/${img}` : "/images/default.jpg";
   useEffect(() => {
     const syncAuth = () => {
       setUserId(localStorage.getItem("userId"));
@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
   const fetchCart = async () => {
     if (!userId || !token) return;
     try {
-      const res = await axios.get(`http://localhost:5000/api/cart/${userId}`, {
+      const res = await axios.get(`https://mini-ecommerce-project-backend.onrender.com/api/cart/${userId}`, {
         headers: { "auth-token": token },
       });
 
@@ -62,7 +62,7 @@ export const CartProvider = ({ children }) => {
       }
 
       const res = await axios.post(
-        `http://localhost:5000/api/cart/${userId}`,
+        `https://mini-ecommerce-project-backend.onrender.com/api/cart/${userId}`,
         { productId: product.id, quantity: 1 },
         { headers: { "auth-token": token } }
       );
@@ -95,7 +95,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/cart/${userId}/${productId}`,
+        `https://mini-ecommerce-project-backend.onrender.com/api/cart/${userId}/${productId}`,
         { headers: { "auth-token": token } }
       );
 
@@ -126,7 +126,7 @@ export const CartProvider = ({ children }) => {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/cart/${userId}`, {
+      await axios.delete(`https://mini-ecommerce-project-backend.onrender.com/api/cart/${userId}`, {
         headers: { "auth-token": token },
       });
       setCart([]);

@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/products");
+        const res = await axios.get("https://mini-ecommerce-project-backend.onrender.com/api/products");
         if (Array.isArray(res.data)) {
           setProductCount(res.data.length);
           setProductList(res.data);

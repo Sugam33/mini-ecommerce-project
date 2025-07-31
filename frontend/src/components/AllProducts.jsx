@@ -7,7 +7,7 @@ const AllProducts = () => {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('https://mini-ecommerce-project-backend.onrender.com/api/products')
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error('Fetch error:', err));
@@ -32,7 +32,7 @@ const AllProducts = () => {
               <img
                 src={
                   product.image
-                    ? `http://localhost:5000/uploads/${product.image}`
+                    ? `https://mini-ecommerce-project-backend.onrender.com/uploads/${product.image}`
                     : '/images/default.jpg'
                 }
                 alt={product.name}

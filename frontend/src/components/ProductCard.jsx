@@ -12,7 +12,7 @@ const ProductCard = ({ product, onView, onEdit, onDelete }) => {
   const handleSave = async (updatedItem) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/products/${product._id}`,
+        `https://mini-ecommerce-project-backend.onrender.com/api/products/${product._id}`,
         updatedItem,
         {
           headers: {
