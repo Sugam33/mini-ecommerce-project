@@ -35,8 +35,8 @@ const Signup = () => {
       <div className="card shadow-lg">
         <h2 className="text-center mb-4">Create Account</h2>
         <form onSubmit={handleSubmit}>
-          <InputForm label="Name" type="text" value={name} onChange={setName} />
-          <InputForm label="Email" type="email" value={email} onChange={setEmail} />
+          <InputForm label="Name" type="text" value={name} onChange={setName} placeholder="Enter your name"/>
+          <InputForm label="Email" type="email" value={email} onChange={setEmail} placeholder="Enter your email" />
 
           <div className="mb-3">
             <label className="form-label">Password</label>

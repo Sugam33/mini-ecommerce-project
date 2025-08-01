@@ -32,7 +32,7 @@ const Login = () => {
       <div className="card shadow-lg">
         <h2 className="text-center mb-4">Welcome Back</h2>
         <form onSubmit={handleSubmit}>
-          <InputForm label="Email" type="email" value={email} onChange={setEmail} />
+          <InputForm label="Email" type="email" value={email} onChange={setEmail} placeholder="Enter email" />
 
           <div className="mb-3">
             <label className="form-label">Password</label>
