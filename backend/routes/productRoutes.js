@@ -15,11 +15,7 @@ router.get("/search", async (req, res) => {
 
   try {
     const results = await Product.find({
-      $or: [
-        { name: { $regex: query, $options: "i" } },
-        { description: { $regex: query, $options: "i" } },
-        { category: { $regex: query, $options: "i" } }
-      ]
+      name: { $regex: query, $options: "i" }
     });
 
     res.json(results);
@@ -29,8 +25,7 @@ router.get("/search", async (req, res) => {
   }
 });
 
-
-//Image Upload Route (Admin only)
+// Image Upload Route (Admin only)
 router.post('/upload-image', verifyToken, verifyAdmin, upload.single('image'), (req, res) => {
   try {
     if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
