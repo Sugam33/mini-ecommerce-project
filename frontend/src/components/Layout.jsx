@@ -7,17 +7,22 @@ const Layout = () => {
   const navigate = useNavigate();
 
   const token = localStorage.getItem('token');
-  const role = localStorage.getItem('role'); // 'user' or 'admin'
+  const role = localStorage.getItem('role');
   const isLoggedIn = Boolean(token);
 
   const handleLogout = () => {
     localStorage.clear();
-    setCart([]); // Clear cart from context state
+    setCart([]);
     navigate('/login');
   };
 
-  // Determine Dashboard route based on role
   const dashboardRoute = role === 'admin' ? '/admin' : '/user';
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const query = e.target.search.value.trim();
+    if (query) navigate(`/search?q=${encodeURIComponent(query)}`);
+  };
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -69,6 +74,20 @@ const Layout = () => {
               )}
             </ul>
 
+            {/* Search Bar */}
+            <form className="d-flex me-3" onSubmit={handleSearchSubmit}>
+              <input
+                name="search"
+                type="search"
+                className="form-control me-2"
+                placeholder="Search products..."
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+
             {/* Cart Button */}
             {isLoggedIn && (
               <button
@@ -94,7 +113,7 @@ const Layout = () => {
 
       {/* Footer */}
       <footer className="bg-dark text-white text-center py-4 mt-auto">
-        <p className="mb-0">© {new Date().getFullYear()}All rights reserved.</p>
+        <p className="mb-0">© {new Date().getFullYear()} All rights reserved.</p>
         <p className="mb-0">Created By Sugam</p>
       </footer>
     </div>

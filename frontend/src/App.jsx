@@ -20,6 +20,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Unauthorized from "./pages/Unauthorized";
 import UserDashboard from "./pages/UserDashboard";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/unauthorized" element={<Unauthorized />} />
+              <Route path="/search" element={<SearchResults />} />
 
               {/* Protected Admin and User Route */}
               <Route element={<ProtectedRoute allowedRole="admin" />}>
