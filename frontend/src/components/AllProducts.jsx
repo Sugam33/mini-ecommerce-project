@@ -23,12 +23,12 @@ const AllProducts = () => {
   };
 
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4">Explore All Products</h2>
+    <div className="container my-5 product-card-wrapper">
+      <h2 className="text-center mb-5">Explore Our Products</h2>
       <div className="row">
         {products.map(product => (
-          <div className="col-md-4 col-sm-6 mb-4" key={product._id}>
-            <div className="card shadow-sm h-100">
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={product._id}>
+            <div className="product-card h-100">
               <img
                 src={
                   product.image
@@ -37,12 +37,11 @@ const AllProducts = () => {
                 }
                 alt={product.name}
                 className="card-img-top"
-                style={{ height: '200px', objectFit: 'cover' }}
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{product.name}</h5>
-                <p className="card-text text-muted">{product.description}</p>
-                <ul className="list-unstyled small mb-3">
+                <p className="card-text">{product.description}</p>
+                <ul className="list-unstyled mb-3">
                   <li><strong>Price:</strong> Rs. {product.price}</li>
                   <li><strong>Category:</strong> {product.category}</li>
                   <li><strong>Stock:</strong> {product.inStock}</li>

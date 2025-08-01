@@ -1,5 +1,3 @@
-// Cart.jsx
-
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -30,7 +28,8 @@ const Cart = () => {
             image: i.productId.image
               ? `https://mini-ecommerce-project-backend.onrender.com/uploads/${i.productId.image}`
               : "/images/default.jpg",
-            price: typeof i.productId.price === "number" ? i.productId.price : 0,
+            price:
+              typeof i.productId.price === "number" ? i.productId.price : 0,
             quantity: i.quantity,
           }))
         : [];
@@ -53,7 +52,8 @@ const Cart = () => {
             image: i.productId.image
               ? `https://mini-ecommerce-project-backend.onrender.com/uploads/${i.productId.image}`
               : "/images/default.jpg",
-            price: typeof i.productId.price === "number" ? i.productId.price : 0,
+            price:
+              typeof i.productId.price === "number" ? i.productId.price : 0,
             quantity: i.quantity,
           }))
         : [];
@@ -106,10 +106,7 @@ const Cart = () => {
                       />
                     </td>
                     <td>
-                      Rs.{" "}
-                      {typeof item.price === "number"
-                        ? item.price
-                        : "0"}
+                      Rs. {typeof item.price === "number" ? item.price : "0"}
                     </td>
                     <td>
                       <div className="d-flex justify-content-center align-items-center gap-2">

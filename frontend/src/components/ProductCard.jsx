@@ -4,6 +4,7 @@ import { CartContext } from "../context/CartContext";
 import EditProductModal from "./EditProductModal";
 import { toast } from "react-toastify";
 
+
 const ProductCard = ({ product, onView, onEdit, onDelete }) => {
   const { addToCart } = useContext(CartContext);
   const [showModal, setShowModal] = useState(false);
@@ -38,9 +39,9 @@ const ProductCard = ({ product, onView, onEdit, onDelete }) => {
   const handleCancel = () => setShowModal(false);
 
   const handleDelete = () => {
-    const confirm = window.confirm("Delete this product?");
-    if (!confirm) return;
-    onDelete(product._id);
+    if (window.confirm("Delete this product?")) {
+      onDelete(product._id);
+    }
   };
 
   const handleAddToCart = () => {
@@ -53,49 +54,44 @@ const ProductCard = ({ product, onView, onEdit, onDelete }) => {
   };
 
   return (
-    <div className="card mb-3 shadow-sm">
-      <div className="card-body">
-        <h5 className="card-title">{product.name}</h5>
-        <p className="card-text">
-          {product.description}
-          <br />
-          <strong>Category:</strong> {product.category}
-          <br />
-          <strong>Price:</strong> Rs {product.price}
-          <br />
-          <strong>Stock:</strong> {product.inStock}
-        </p>
-
-        <button
-          className="btn btn-outline-primary me-2"
-          onClick={() => onView(product._id)}
-        >
-          View
-        </button>
-
-        {role === "admin" && (
-          <>
-            <button
-              className="btn btn-outline-warning me-2"
-              onClick={() => setShowModal(true)}
-            >
-              Edit
+    <div className="product-card-wrapper">
+      <div className="card shadow-sm h-100">
+        <img
+          src={
+            product.image
+              ? `https://mini-ecommerce-project-backend.onrender.com/uploads/${product.image}`
+              : "/images/default.jpg"
+          }
+          alt={product.name}
+          className="card-img-top"
+        />
+        <div className="card-body d-flex flex-column">
+          <h5 className="card-title">{product.name}</h5>
+          <p className="card-text mb-2">{product.description}</p>
+          <ul className="list-unstyled small mb-3">
+            <li><strong>Category:</strong> {product.category}</li>
+            <li><strong>Price:</strong> Rs {product.price}</li>
+            <li><strong>Stock:</strong> {product.inStock}</li>
+          </ul>
+          <div className="mt-auto d-flex flex-wrap gap-2">
+            <button className="btn btn-outline-primary" onClick={() => onView(product._id)}>
+              View
             </button>
-            <button
-              className="btn btn-outline-danger me-2"
-              onClick={handleDelete}
-            >
-              Delete
+            {role === "admin" && (
+              <>
+                <button className="btn btn-outline-warning" onClick={() => setShowModal(true)}>
+                  Edit
+                </button>
+                <button className="btn btn-outline-danger" onClick={handleDelete}>
+                  Delete
+                </button>
+              </>
+            )}
+            <button className="btn btn-warning" onClick={handleAddToCart}>
+              Add to Cart
             </button>
-          </>
-        )}
-
-        <button
-          className="btn btn-warning me-2"
-          onClick={handleAddToCart}
-        >
-          Add to Cart
-        </button>
+          </div>
+        </div>
 
         {showModal && (
           <EditProductModal
